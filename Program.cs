@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +10,20 @@ namespace help
     {
         static void Main(string[] args)
         {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Console.InputEncoding = System.Text.Encoding.UTF8;
+
+            List<ISwitchable> devices = new List<ISwitchable>
+            {
+                new TVSet(),
+                new PersonalComputer()
+            };
+
+            foreach (var device in devices)
+            {
+                device.TurnOn();
+                device.TurnOff();
+            }
         }
     }
 }
