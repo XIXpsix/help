@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +10,20 @@ namespace help
     {
         static void Main(string[] args)
         {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Console.InputEncoding = System.Text.Encoding.UTF8; 
+
+            var pupil1 = new ExcelentPupil("Сидоров");
+            var pupil2 = new GoodPupil("Кузнецов");
+            var pupil3 = new BadPupil("Смирнов");
+
+            // Пример с 3 учениками (4-й добавится автоматически)
+            ClassRoom classRoom = new ClassRoom(pupil1, pupil2, pupil3);
+
+            classRoom.ShowAll();
+
+            Console.WriteLine("\nНажмите любую клавишу для выхода...");
+            Console.ReadKey();
         }
     }
 }
