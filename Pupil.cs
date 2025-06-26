@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace help
 {
-    internal class Pupil
+    internal abstract class Pupil
     {
         public string LastName { get; }
 
