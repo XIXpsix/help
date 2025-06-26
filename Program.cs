@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +10,15 @@ namespace help
     {
         static void Main(string[] args)
         {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Console.InputEncoding = System.Text.Encoding.UTF8;
+            double a = 10;
+            double b = 5;
+
+            Console.WriteLine($"Сложение: {a} + {b} = {Calculator.Add(a, b)}");
+            Console.WriteLine($"Вычитание: {a} - {b} = {Calculator.Subtract(a, b)}");
+            Console.WriteLine($"Умножение: {a} * {b} = {Calculator.Multiply(a, b)}");
+            Console.WriteLine($"Деление: {a} / {b} = {Calculator.Divide(a, b)}");
         }
     }
 }
