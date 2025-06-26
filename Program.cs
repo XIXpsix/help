@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +10,34 @@ namespace help
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Введите формат документа (xml, txt, doc):");
+            string format = Console.ReadLine();
+
+            AbstractHandler handler = null;
+
+            switch (format.ToLower())
+            {
+                case "xml":
+                    handler = new XMLHandler();
+                    break;
+                case "txt":
+                    handler = new TXTHandler();
+                    break;
+                case "doc":
+                    handler = new DOCHandler();
+                    break;
+                default:
+                    Console.WriteLine("Неизвестный формат документа.");
+                    return;
+            }
+
+            handler.Open();
+            handler.Create();
+            handler.Chenge();
+            handler.Save();
+
+            Console.WriteLine("Нажмите любую клавишу для выхода...");
+            Console.ReadKey();
         }
     }
 }
