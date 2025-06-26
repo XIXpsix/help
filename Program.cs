@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +10,13 @@ namespace help
     {
         static void Main(string[] args)
         {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Console.InputEncoding = System.Text.Encoding.UTF8;
+
+            Tour t = new Tour();
+            t.TourCalc();
+            t.TourCalc("Италия");
+            t.TourCalc("Испания", 7);
         }
     }
 }
