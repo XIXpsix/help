@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace help
 {
-    internal class Tovar
+    public abstract class Tovar
     {
         public string Name { get; set; }
         public decimal Price { get; set; }
