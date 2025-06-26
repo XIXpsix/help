@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +10,17 @@ namespace help
     {
         static void Main(string[] args)
         {
+            Printer basePrinter = new Printer();
+            Printer redPrinter = new RedPrinter();
+            Printer greenPrinter = new GreenPrinter();
+
+            // Используем приведение типов
+            ((Printer)redPrinter).Print("Текст красным цветом");
+            ((Printer)greenPrinter).Print("Текст зелёным цветом");
+            basePrinter.Print("Текст обычным цветом");
+
+            Console.WriteLine("Нажмите любую клавишу для выхода...");
+            Console.ReadKey();
         }
     }
 }
